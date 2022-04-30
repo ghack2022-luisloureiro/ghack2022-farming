@@ -6,17 +6,20 @@
   </head>
   <body>
     <section class="container">
-      <section class="flex form-section">
-        <form id="search-form" onsubmit="__ghackOnSubmitFormHandler(event)">
+      <section class="form-section">
+        <form id="search-form" onsubmit="ghackOnSubmitFormHandler(event)">
           <label for="search-code">
-            <input id="search-code" type="text" placeholder="e.g. 1234567890" />
+            <input
+              required
+              id="search-code"
+              type="number"
+              placeholder="e.g. (1001 - 1295)"
+            />
           </label>
           <button type="submit">Search</button>
         </form>
       </section>
-      <section class="flex product-section">
-        <ul></ul>
-      </section>
+      <section class="product-section"></section>
     </section>
 
     <script>
