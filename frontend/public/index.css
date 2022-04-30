@@ -42,3 +42,7 @@ li> span:first-child::after {
 .color-5 {
   color: #43A047
 }
+
+form input, form button {
+  font-size: 1em;
+}
