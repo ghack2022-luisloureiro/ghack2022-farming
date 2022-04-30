@@ -12,6 +12,7 @@
     "typescript": "4.2.3"
   },
   "scripts": {
+    "prepare": "echo 'testing prepare'",
     "postinstall": "tsc --build",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/web.js\"",
     "start": "node dist/web.js"
