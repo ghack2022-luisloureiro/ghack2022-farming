@@ -5,10 +5,12 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
+    <h1>La Fattoria - G_hack2022 Ethical Farming</h1>
     <section class="container">
       <section class="form-section">
         <form id="search-form" onsubmit="ghackOnSubmitFormHandler(event)">
           <label for="search-code">
+            Enter the product's barcode
             <input
               required
               id="search-code"
@@ -78,7 +80,7 @@
 
           const rate = calcSustainableRate(product, metrics)
           const rateElem = document.createElement("h3")
-          rateElem.textContent = `Sustainability rate: `
+          rateElem.textContent = `Ethical rate: `
           const rateValueElem = document.createElement("span")
           rateValueElem.textContent = `${Math.ceil(rate)}%`
           rateValueElem.classList.add(`color-${Math.round(5 * (rate / 100))}`)
