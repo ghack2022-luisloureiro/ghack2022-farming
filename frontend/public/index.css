@@ -1,3 +1,7 @@
+body {
+  font-size: 1.5em;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -9,4 +13,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+li> span:first-child::after {
+  content: " - ";
+}
+
+.color-1 {
+  color: #D90000;
+}
+
+.color-2 {
+  color: #FF2D00;
+}
+
+.color-3 {
+  color: #F2B705;
+}
+
+.color-4 {
+  color: #43A047;
+}
+
+.color-5 {
+  color: #43A047
 }
