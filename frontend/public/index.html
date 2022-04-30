@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>La Fattoria</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <form>
-      <label for="search-code">
-        <input id="search-code" type="text" placeholder="e.g. 1234567890" />
-      </label>
-      <button type="submit">Search</button>
-    </form>
+    <section class="container">
+      <section class="flex form-section">
+        <form id="search-form" onsubmit="__ghackOnSubmitFormHandler(event)">
+          <label for="search-code">
+            <input id="search-code" type="text" placeholder="e.g. 1234567890" />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+      </section>
+      <section class="flex product-section">
+        <ul></ul>
+      </section>
+    </section>
+
+    <script>
+      async function __ghackOnSubmitFormHandler(event) {
+        event.preventDefault()
+
+        const response = await fetch(
+          "https://my-repo-dyhei744aq-od.a.run.app/api/produtos"
+        )
+        const data = await response.json()
+
+        const newList = document.createElement("ul")
+
+        const items = data.data.forEach((elem) => {
+          const htmlElem = document.createElement("li")
+          htmlElem.textContent = elem.nome
+
+          newList.appendChild(htmlElem)
+        })
+        const list = document.querySelector(".product-section ul")
+        const section = document.querySelector(".product-section")
+        section.removeChild(list)
+        section.appendChild(newList)
+      }
+    </script>
   </body>
 </html>
